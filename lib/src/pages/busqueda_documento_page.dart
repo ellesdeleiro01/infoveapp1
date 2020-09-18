@@ -86,6 +86,7 @@ Widget _pageItem(String name, int position) {
     fontSize: 20.0,
     fontWeight: FontWeight.normal,
     color: Colors.blueGrey.withOpacity(0.4),
+    //prueba para guardar en repositorio
   );
 
   if (position == currentPage) {
