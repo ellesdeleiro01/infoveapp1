@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-//import 'package:infoveapp1/src/bloc/login_bloc.dart';
-//export 'package:infoveapp1/src/bloc/login_bloc.dart';
 import 'package:infoveapp1/src/bloc/provider.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        _crearFondo(context),
-        _loginForm(context),
-      ],
-    ));
+    return SingleChildScrollView(
+        child:Scaffold(
+        body:Stack(
+          children: <Widget>[
+            _crearFondo(context),
+            _loginForm(context),
+          ],
+        ),
+        ),
+    );
   }
 
   Widget _loginForm(BuildContext context) {
@@ -21,18 +22,17 @@ class LoginPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          SafeArea(
-            child: Container(
+          Container(
               height: 180.0,
             ),
-          ),
+
           Container(
             width: size.width * 0.85,
             margin: EdgeInsets.symmetric(vertical: 30.0),
             padding: EdgeInsets.symmetric(vertical: 50.0),
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(30.0),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                       color: Colors.black26,
@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                 ]),
             child: Column(
               children: <Widget>[
-                Text('ingreso', style: TextStyle(fontSize: 20.0)),
+                Text('Ingreso', style: TextStyle(fontSize: 20.0)),
                 SizedBox(height: 60.0),
                 _crearUsr(bloc),
                 SizedBox(height: 30.0),
@@ -58,7 +58,8 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _crearUsr(LoginBloc bloc) {
-    return StreamBuilder(
+    return
+      StreamBuilder(
       stream: bloc.usrStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
@@ -66,7 +67,7 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-                icon: Icon(Icons.accessibility, color: Colors.blue),
+                icon: Icon(Icons.email, color: Colors.blue),
                 hintText: 'example@example.com',
                 labelText: 'Correo',
                 counterText: snapshot.data,
@@ -87,9 +88,8 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-                icon: Icon(Icons.keyboard, color: Colors.blue),
+                icon: Icon(Icons.vpn_key, color: Colors.blue),
                 hintText: 'contraseña',
-                labelText: 'Contraseña',
                 counterText: snapshot.data,
                 errorText: snapshot.error),
             onChanged: bloc.changePwd,
@@ -136,9 +136,9 @@ class LoginPage extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: <Color>[
-        Color.fromRGBO(52, 126, 249, 1.0),
-        Color.fromRGBO(52, 126, 249, 1.0),
-      ])),
+            Color.fromRGBO(52, 126, 249, 1.0),
+            Color.fromRGBO(52, 126, 249, 1.0),
+          ])),
     );
 
     return Stack(

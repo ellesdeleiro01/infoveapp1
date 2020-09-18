@@ -1,6 +1,6 @@
 # infoveapp1
 
-A new Flutter project.
+Application to streamline PQR's, guardianship and lawsuit processes.
 
 ## Getting Started
 
