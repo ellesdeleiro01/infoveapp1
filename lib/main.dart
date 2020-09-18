@@ -4,6 +4,7 @@ import 'package:infoveapp1/src/pages/home_page.dart';
 import 'package:infoveapp1/src/pages/login_pages.dart';
 import 'package:infoveapp1/src/pages/busqueda_documento_page.dart';
 import 'package:infoveapp1/src/pages/busqueda_placa_page.dart';
+import 'package:infoveapp1/src/pages/sugerencias_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,12 +15,13 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Material App',
-            initialRoute: 'login',
+            initialRoute: 'home',
             routes: {
               'login': (BuildContext context) => LoginPage(),
               'home': (BuildContext context) => HomePage(),
               'documento': (BuildContext context) => DocumentoPage(),
               'placa': (BuildContext context) => PlacaPage(),
+              'sugerencias': (BuildContext context) => SugerenciasPage(),
             },
             theme: ThemeData(primaryColor: Colors.blue[700])));
   }

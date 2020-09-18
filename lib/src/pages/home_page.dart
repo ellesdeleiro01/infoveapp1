@@ -43,7 +43,7 @@ Widget _crearBoton(BuildContext context) {
     ),
     color: Colors.blue,
     textColor: Colors.black,
-    onPressed: () => Navigator.pushReplacementNamed(context, 'documento'),
+    onPressed: () => Navigator.pushNamed(context, 'documento'),
   );
 }
 
@@ -58,7 +58,7 @@ Widget _crearBoton2(BuildContext context) {
       ),
       color: Colors.blue,
       textColor: Colors.black,
-      onPressed: () => Navigator.pushReplacementNamed(context, 'placa'));
+      onPressed: () => Navigator.pushNamed(context, 'placa'));
 }
 
 Widget _crearBoton3(BuildContext context) {
@@ -72,5 +72,5 @@ Widget _crearBoton3(BuildContext context) {
       ),
       color: Colors.blue,
       textColor: Colors.black,
-      onPressed: (null));
+      onPressed: () => Navigator.pushNamed(context, 'sugerencias'));
 }
