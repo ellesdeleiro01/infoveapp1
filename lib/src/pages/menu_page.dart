@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:infoveapp1/src/bloc/MyBottomNavigatioBar.dart';
+
 
 class MenuPage extends StatefulWidget {
   MenuPage({Key key}) : super(key: key);
@@ -16,8 +16,7 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'INFOVEAPP',
+          child: Text('INFOVEAPP',
             style: TextStyle(fontFamily: 'RussoOne', fontSize: 24.0),
           ),
         ),
@@ -40,7 +39,7 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                   SizedBox(height: 50.0),
                   CreateButton('Consulta por número de documento'),
-                  CreateButton('Consulta por placa y fecha'),
+                  CreateButton('Consulta por Placa y Fecha'),
                   CreateButton('Sugerencias y/o peticiones'),
                 ],
               ),
@@ -85,7 +84,7 @@ class _MenuPageState extends State<MenuPage> {
 
 class CreateButton extends StatelessWidget {
   final String name;
-  const CreateButton(this.name);
+  CreateButton(this.name);
   @override
   Widget build(BuildContext context) {
     return Center(
